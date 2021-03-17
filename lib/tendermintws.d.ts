@@ -41,6 +41,7 @@ export default class TendermintWS extends EventEmitter {
     connect(): Promise<TendermintWS>;
     onMessage(message: MessageEvent): void;
     subscribe(params: string[], callback: (data: any) => void): void;
+    call(method: string, params: unknown[]): Promise<unknown>;
     onOpen(): void;
     onError(error: string): void;
     onClose(): void;
