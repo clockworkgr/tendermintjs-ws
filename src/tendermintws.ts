@@ -119,7 +119,7 @@ export default class TendermintWS extends EventEmitter {
 	onMessage(message: MessageEvent): void {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		const response: any = JSON.parse(message.data);
-		
+		console.log(response)
 		const handler:Request = this.requests.get(response.id);
 		if(handler && response.result.query) {
 			if (handler.type=='Subscription')  {
